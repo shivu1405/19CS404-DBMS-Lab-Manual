@@ -47,45 +47,29 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
-For products with a profit % less than 30% of selling price, update the selling price to provide a profit margin of 35% over cost price of the product in the products table.
+Write a SQL statement to retrieve city(column name) of all customers from customers table without any repeats.
 
-PRODUCTS TABLE
+ 
 
-name               type
------------------  ---------------
-product_id         INT
-product_name       VARCHAR(100)
-category           VARCHAR(50)
-cost_price         DECIMAL(10,2)
-sell_price         DECIMAL(10,2)
-reorder_lvl        INT
-quantity           INT
-supplier_id        INT
+ 
+
 For example:
 
-Test	Result
-SELECT*FROM Products WHERE supplier_id = 10;
-product_id  product_name      category    cost_price  sell_price  reorder_lvl  quantity    supplier_id
-----------  ----------------  ----------  ----------  ----------  -----------  ----------  -----------
-6           Detergent Powder  Snacks      60          80          20           40          10
-7           Surf Excel Deter  Snacks      85          100         10           40          10
-8           Detergent Ariel   Items       85          100         10           40          10
-product_id  product_name      category    cost_price  sell_price  reorder_lvl  quantity    supplier_id
-----------  ----------------  ----------  ----------  ----------  -----------  ----------  -----------
-6           Detergent Powder  Snacks      60          81          20           40          10
-7           Surf Excel Deter  Snacks      85          114         10           40          10
-8           Detergent Ariel   Items       85          114         10           40         
+Result
+city
+----------
+Chennai
+California
+Berlin
+Moscow
 
 ```sql
-UPDATE Products 
-SET sell_price = cost_price * 1.35
-WHERE ((sell_price - cost_price) <(0.30 * sell_price) ;
-
+SELECT DISTINCT city FROM customers;
 ```
 
 **Output:**
 
-<img width="1239" height="577" alt="image" src="https://github.com/user-attachments/assets/a367f0c9-86dd-4f22-b255-1140275dd6fe" />
+<img width="1256" height="596" alt="image" src="https://github.com/user-attachments/assets/949a36ad-9801-490e-84fe-97e1eb6ce52e" />
 
 **Question 2**
 ---
